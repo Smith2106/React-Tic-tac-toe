@@ -5,16 +5,16 @@ import './index.css';
 class Square extends React.Component {
     render() {
       return (
-        <button className="square">
-          {/* TODO */}
+        <button className="square" onClick={function() { alert('click'); }}>
+          {this.props.value}
         </button>
       );
     }
-  }
+}
   
-  class Board extends React.Component {
+class Board extends React.Component {
     renderSquare(i) {
-      return <Square />;
+      return <Square value={i} />;
     }
   
     render() {
@@ -41,12 +41,12 @@ class Square extends React.Component {
         </div>
       );
     }
-  }
+}
   
-  class Game extends React.Component {
+class Game extends React.Component {
     render() {
-      return (
-        <div className="game">
+        return (
+          <div className="game">
           <div className="game-board">
             <Board />
           </div>
@@ -57,7 +57,7 @@ class Square extends React.Component {
         </div>
       );
     }
-  }
+}
   
   // ========================================
   
